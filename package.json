@@ -4,6 +4,8 @@
   "description": "```\r echo \"# node-auth-api-v1\" >> README.md\r git init\r git add README.md\r git commit -m \"first commit\"\r git branch -M main\r git remote add origin https://github.com/sujeet-mehra/node-auth-api-v1.git\r git push -u origin main\r ```",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

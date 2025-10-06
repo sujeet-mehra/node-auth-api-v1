@@ -3,8 +3,12 @@ const db = require("../database/mysql.db");
 function crudRepository(tableName) {
   return {
     create: async function (data) {
-      const [result] = await db.query(`INSERT INTO ${tableName} SET ?`, data);
-      return result.insertId;
+      try {
+        const [result] = await db.query(`INSERT INTO ${tableName} SET ?`, data);
+        return result.insertId;
+      } catch (error) {
+        throw error;
+      }
     },
     findAll: async function () {
       const [rows] = await db.query(`SELECT * FROM ${tableName}`);

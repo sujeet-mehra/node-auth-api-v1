@@ -6,4 +6,9 @@ const dbConnection = require('./database/mysql.db');
 // http://localhost:4001/api/
 app.use('/api', apiRoutes);
 
+// Error handling middleware
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).send('Internal Server Error');
+});
 module.exports = app;

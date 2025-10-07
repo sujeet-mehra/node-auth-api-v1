@@ -3,6 +3,9 @@ const app = express();
 const apiRoutes = require('./routes');
 // const dbConnection = require('./database/mysql.db');
 
+// Middleware to parse JSON bodies
+app.use(express.json());
+
 // http://localhost:4001/api/
 app.use('/api', apiRoutes);
 
